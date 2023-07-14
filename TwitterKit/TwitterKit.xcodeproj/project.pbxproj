@@ -3552,6 +3552,8 @@
 					"$(PROJECT_DIR)",
 				);
 				SDKROOT = iphoneos;
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 			};
 			name = Debug;
 		};
@@ -3565,6 +3567,8 @@
 					"$(PROJECT_DIR)",
 				);
 				SDKROOT = iphoneos;
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 			};
 			name = Release;
 		};
@@ -3575,6 +3579,7 @@
 				BITCODE_GENERATION_MODE = bitcode;
 				CODE_SIGN_IDENTITY = "";
 				ENABLE_BITCODE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 5.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -3583,6 +3588,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twitter.sdk.ios;
 				SDKROOT = iphoneos;
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 			};
 			name = Debug;
 		};
@@ -3593,6 +3600,7 @@
 				BITCODE_GENERATION_MODE = bitcode;
 				CODE_SIGN_IDENTITY = "";
 				ENABLE_BITCODE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 5.1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -3601,6 +3609,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.twitter.sdk.ios;
 				SDKROOT = iphoneos;
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 			};
 			name = Release;
 		};

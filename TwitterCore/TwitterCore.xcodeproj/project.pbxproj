@@ -1405,6 +1405,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				ja,
 				ko,
@@ -1699,6 +1700,8 @@
 					"$(TARGET_BUILD_DIR)/Headers/",
 					"$(TARGET_BUILD_DIR)/PrivateHeaders/",
 				);
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 			};
 			name = Debug;
 		};
@@ -1715,6 +1718,8 @@
 					"$(TARGET_BUILD_DIR)/Headers/",
 					"$(TARGET_BUILD_DIR)/PrivateHeaders/",
 				);
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 			};
 			name = Release;
 		};
@@ -1755,6 +1760,7 @@
 				INFOPLIST_FILE = "TwitterCore-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(TWC_BUNDLE_IDENTIFIER)";
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1772,6 +1778,7 @@
 				INFOPLIST_FILE = "TwitterCore-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(TWC_BUNDLE_IDENTIFIER)";
+				"VALID_ARCHS[sdk=iphoneos*]" = arm64;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
