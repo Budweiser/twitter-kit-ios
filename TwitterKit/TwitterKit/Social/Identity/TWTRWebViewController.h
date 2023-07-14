@@ -28,6 +28,8 @@ typedef BOOL (^TWTRWebViewControllerShouldLoadCompletion)(UIViewController *cont
 typedef void (^TWTRWebViewControllerCancelCompletion)(TWTRWebViewController *webViewController);
 typedef void (^TWTRWebViewControllerHandleError)(NSError *error);
 
+typedef void (^TWTRWebViewControllerViewDisappear)(TWTRWebViewController *webViewController);
+
 @interface TWTRWebViewController : UIViewController <WKNavigationDelegate>
 
 @property (nonatomic, strong) NSURLRequest *request;
@@ -35,5 +37,7 @@ typedef void (^TWTRWebViewControllerHandleError)(NSError *error);
 @property (nonatomic, copy) TWTRWebViewControllerHandleError errorHandler;
 
 - (void)enableCancelButtonWithCancelCompletion:(TWTRWebViewControllerCancelCompletion)cancelCompletion;
+
+- (void)setHandleViewDisappear:(TWTRWebViewControllerViewDisappear)onViewDisappear;
 
 @end

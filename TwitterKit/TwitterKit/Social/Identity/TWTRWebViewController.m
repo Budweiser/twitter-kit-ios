@@ -23,6 +23,7 @@
 @property (nonatomic, strong) WKWebView *webView;
 @property (nonatomic, assign) BOOL showCancelButton;
 @property (nonatomic, copy) TWTRWebViewControllerCancelCompletion cancelCompletion;
+@property (nonatomic, copy) TWTRWebViewControllerViewDisappear onViewDisappear;
 
 @end
 
@@ -71,6 +72,13 @@
         [[self navigationItem] setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)]];
     }
     [self load];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if ([self onViewDisappear]) {
+        [self onViewDisappear](self);
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -145,6 +153,11 @@
     NSAssert([self isViewLoaded] == NO, @"This method must be called before the view controller is presented");
     [self setShowCancelButton:YES];
     [self setCancelCompletion:cancelCompletion];
+}
+
+- (void)setHandleViewDisappear:(TWTRWebViewControllerViewDisappear)onViewDisappear
+{
+    [self setOnViewDisappear:onViewDisappear];
 }
 
 - (void)initWebView {

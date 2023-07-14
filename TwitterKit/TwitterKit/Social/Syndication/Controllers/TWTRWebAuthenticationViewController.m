@@ -78,12 +78,12 @@
 
 - (UIViewController *)webController
 {
-    if (_useWebFlow) {
+//    if (_useWebFlow) {
         return [self webViewController];
-    } else {
-        [self.navigationController setNavigationBarHidden:YES];
-        return [self safariViewController];
-    }
+//    } else {
+//        [self.navigationController setNavigationBarHidden:YES];
+//        return [self safariViewController];
+//    }
 }
 
 - (SFSafariViewController *)safariViewController
@@ -110,6 +110,10 @@
         }
         return YES;
     };
+    
+    [webVC setHandleViewDisappear:^(TWTRWebViewController *webViewController) {
+        [self failWithError:[TWTRErrors webCancelError]];
+    }];
 
     return webVC;
 }
